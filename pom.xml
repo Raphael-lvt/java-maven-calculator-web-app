@@ -78,6 +78,17 @@
 
     <build>
         <finalName>calculator</finalName>
+        
+            <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>com.github.spotbugs</groupId>
+          <artifactId>spotbugs-maven-plugin</artifactId>
+          <version>4.2.1-SNAPSHOT</version>
+        </plugin>
+        ...
+      </plugins>
+    </pluginManagement>
 
         <plugins>
             <plugin>
@@ -261,6 +272,22 @@
                 <version>2.22.0</version>
             </plugin>
         </plugins>
+            <plugins>
+      <plugin>
+        <groupId>com.github.spotbugs</groupId>
+        <artifactId>spotbugs-maven-plugin</artifactId>
+        <version>4.2.1-SNAPSHOT</version>
+      </plugin>
+      ...
+    </plugins>
+            <plugins>
+      <plugin>
+        <groupId>com.github.spotbugs</groupId>
+        <artifactId>spotbugs-maven-plugin</artifactId>
+        <version>4.2.1-SNAPSHOT</version>
+      </plugin>
+      ...
+    </plugins>
     </reporting>
 
 </project>
