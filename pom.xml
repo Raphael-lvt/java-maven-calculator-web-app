@@ -277,7 +277,7 @@
         <artifactId>spotbugs-maven-plugin</artifactId>
         <version>4.2.1-SNAPSHOT</version>
       </plugin>
-      ...
+
     </plugins>
             <plugins>
       <plugin>
@@ -285,7 +285,7 @@
         <artifactId>spotbugs-maven-plugin</artifactId>
         <version>4.2.1-SNAPSHOT</version>
       </plugin>
-      ...
+
     </plugins>
     </reporting>
 
