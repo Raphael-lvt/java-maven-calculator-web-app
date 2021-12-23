@@ -86,7 +86,6 @@
           <artifactId>spotbugs-maven-plugin</artifactId>
           <version>4.2.1-SNAPSHOT</version>
         </plugin>
-        ...
       </plugins>
     </pluginManagement>
 
