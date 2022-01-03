@@ -1,44 +1,47 @@
-node {
-   def mvnHome = tool 'M3'
+pipeline {
 
-   stage('Checkout Code') { 
-      git 'https://github.com/maping/java-maven-calculator-web-app.git'
-   }
-   stage('JUnit Test') {
-      if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn' clean test"
-      } else {
-         bat(/"${mvnHome}\bin\mvn" clean test/)
-      }
-   }
-   stage('Integration Test') {
-      if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn' integration-test"
-      } else {
-         bat(/"${mvnHome}\bin\mvn" integration-test/)
-      }
-   }
- /*
-   stage('Performance Test') {
-      if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn' cargo:start verify cargo:stop"
-      } else {
-         bat(/"${mvnHome}\bin\mvn" cargo:start verify cargo:stop/)
-      }
-   }
-  */
-  stage('Performance Test') {
-      if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn' verify"
-      } else {
-         bat(/"${mvnHome}\bin\mvn" verify/)
-      }
-   }
-   stage('Deploy') {
-      timeout(time: 10, unit: 'MINUTES') {
-           input message: 'Deploy this web app to production ?'
-      }
-      echo 'Deploy...'
-   }
+	agent any
+	
+	parameters {
+	string(name: 'tomcat_dev',
+	defaultValue:'C:/Installation/apache-tomcat-8.5.73/calculator',
+	description:'Staging Server : 8080')
+	string(name: 'tomcat_prod',
+	defaultValue:'C:/Installation/apache-tomcat-8.5.73 - production/calculator'
+	description:'Production Server : 8090')
+	}
+	
+	triggers{
+	pollSCM('* * * * *') //Polling Source Control
+	}
+	
+	stages{
+		stage('Build') {
+			steps{
+			bat 'mvn clean package'
+			}
+			post {
+				success {
+				echo "Now Archiving ...."
+				archiveArtifacts artifacts: '**/target/*.war'
+				}
+			}
+		}
+		
+		stage('Deployments'){
+			parallel {
+				stage ('Deploy to Staging') {
+					steps {
+					bat "cp **/target/*.war %tomcat_dev%"
+					}
+				}
+				
+				stage('Deploy to Production') {
+					steps {
+					bat "cp **/target/*.war %tomcat_prod%"
+					}
+				}
+			}
+		}
+	}
 }
-   
