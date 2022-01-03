@@ -28,13 +28,13 @@ pipeline {
 			parallel {
 				stage ('Deploy to Staging') {
 					steps {
-					bat "cmd.exe copy **/target/*.war %tomcat_dev%"
+					deploy adapters: [tomcat8(credentialsId: '2b00276c-76c4-4ec1-a307-6743bf21871a', path: '', url: 'http://localhost:8080')], contextPath: null, war: '**/*.war'
 					}
 				}
 				
 				stage('Deploy to Production') {
 					steps {
-					bat "cmd.exe copy **/target/*.war %tomcat_prod%"
+					deploy adapters: [tomcat8(credentialsId: '2b00276c-76c4-4ec1-a307-6743bf21871a', path: '', url: 'http://localhost:8090')], contextPath: null, war: '**/*.war'
 					}
 				}
 			}
