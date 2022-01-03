@@ -28,13 +28,13 @@ pipeline {
 			parallel {
 				stage ('Deploy to Staging') {
 					steps {
-					bat "xcopy **/target/*.war %tomcat_dev%"
+					bat "ROBOCOPY **/target/*.war %tomcat_dev%"
 					}
 				}
 				
 				stage('Deploy to Production') {
 					steps {
-					bat "xcopy **/target/*.war %tomcat_prod%"
+					bat "ROBOCOPY **/target/*.war %tomcat_prod%"
 					}
 				}
 			}
