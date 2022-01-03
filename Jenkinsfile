@@ -3,12 +3,8 @@ pipeline {
 	agent any
 	
 	parameters {
-	string(name: 'tomcat_dev',
-	defaultValue:'C:/Installation/apache-tomcat-8.5.73/calculator',
-	description:'Staging Server : 8080')
-	string(name: 'tomcat_prod',
-	defaultValue:'C:/Installation/apache-tomcat-8.5.73 - production/calculator'
-	description:'Production Server : 8090')
+	string(name: 'tomcat_dev', defaultValue:'C:/Installation/apache-tomcat-8.5.73/calculator', description:'Staging Server : 8080')
+	string(name: 'tomcat_prod', defaultValue:'C:/Installation/apache-tomcat-8.5.73 - production/calculator', description:'Production Server : 8090')
 	}
 	
 	triggers{
