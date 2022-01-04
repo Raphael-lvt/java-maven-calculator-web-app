@@ -170,11 +170,11 @@
                 <configuration>
                     <container>
                         <containerId>tomcat8x</containerId>
-                        <home>/Users/maping/apache/tomcat</home>
+                        <home>Installation\apache-tomcat-8.5.73</home>
                     </container>
                     <configuration>
                         <type>existing</type>
-                        <home>/Users/maping/apache/tomcat</home>
+                        <home>Installation\apache-tomcat-8.5.73</home>
                     </configuration>
                 </configuration>
             </plugin>
