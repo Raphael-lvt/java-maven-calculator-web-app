@@ -10,9 +10,9 @@ public class CalculatorResponse {
     String time;
 
     public CalculatorResponse(int x, int y, int result) {
-        x = x;
-        y = y;
-        result = result;
+        this.x = x;
+        this.y = y;
+        this.result = result;
         time = new Date().toString();
     }
 
