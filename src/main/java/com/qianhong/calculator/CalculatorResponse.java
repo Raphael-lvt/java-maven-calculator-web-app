@@ -7,11 +7,19 @@ public class CalculatorResponse {
 	/*
 	 * Attributs nécessaires au calcul
 	 */
-    private int x; // premier nombre
-    // dddd
-    private int y; // deuxieme nombre
-    private int result; //resultat après opération
-    private String time; // date actuel
+    private int x; 
+	/*
+	 * Attributs nécessaires au calcul
+	 */
+    private int y;
+	/*
+	 * Attributs nécessaires au calcul
+	 */
+    private int result;
+	/*
+	 * Attributs nécessaires au calcul
+	 */
+    private String time; 
 
     public CalculatorResponse(int x, int y, int result) {
         this.x = x;
