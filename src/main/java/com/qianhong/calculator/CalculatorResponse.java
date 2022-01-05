@@ -4,10 +4,10 @@ import java.util.Date;
 
 public class CalculatorResponse {
 
-    private int x;
-    private int y;
-    private int result;
-    private String time;
+    private int x; // premier nombre
+    private int y; // deuxieme nombre
+    private int result; //resultat après opération
+    private String time; // date actuel
 
     public CalculatorResponse(int x, int y, int result) {
         this.x = x;
