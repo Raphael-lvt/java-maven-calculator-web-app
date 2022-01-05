@@ -1,3 +1,8 @@
+/*
+ *  03.05.2016
+ *  Copyright (c) 2016 FOO-COMPANY. All Rights Reserved.  
+ */
+
 package com.qianhong.calculator;
 
 import javax.ws.rs.GET;
