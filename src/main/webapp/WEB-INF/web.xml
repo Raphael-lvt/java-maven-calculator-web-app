@@ -5,6 +5,21 @@
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+
+	<security-constraint>
+		<display-name>Sécurité sous Tomcat</display-name>
+
+		<web-resource-collection>
+			<web-resource-name>Ressource protégée</web-resource-name>
+			<url-pattern>/calculator/*</url-pattern>
+		</web-resource-collection>
+
+		<auth-constraint>
+			<role-name>manager-script</role-name>
+			<role-name>manager-gui</role-name>
+		</auth-constraint>
+
+	</security-constraint>
     
     <servlet>
         <servlet-name>Calculator Service</servlet-name>
