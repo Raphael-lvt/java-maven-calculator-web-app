@@ -4,6 +4,9 @@ import java.util.Date;
 
 public class CalculatorResponse {
 
+	/*
+	 * Attributs nécessaires au calcul
+	 */
     private int x; // premier nombre
     private int y; // deuxieme nombre
     private int result; //resultat après opération
