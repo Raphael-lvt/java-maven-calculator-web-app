@@ -4,6 +4,8 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+import java.util.Date;
+
 import static org.hamcrest.CoreMatchers.*;
 
 public class CalculatorServiceTest {
@@ -39,6 +41,7 @@ public class CalculatorServiceTest {
     	assertEquals(1, calculatorResponse.getX());
     	assertEquals(1, calculatorResponse.getY());
     	assertEquals(1, calculatorResponse.getResult());
+    	assertEquals(new Date().toString(), calculatorResponse.getTime());
     }
     
 }
