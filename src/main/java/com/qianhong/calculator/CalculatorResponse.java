@@ -5,20 +5,11 @@ import java.util.Date;
 public class CalculatorResponse {
 
 	/*
-	 * Attributs nécessaires au calcul
+	 * Description de l'attribut privé
 	 */
     private int x; 
-	/*
-	 * Attributs nécessaires au calcul
-	 */
     private int y;
-	/*
-	 * Attributs nécessaires au calcul
-	 */
     private int result;
-	/*
-	 * Attributs nécessaires au calcul
-	 */
     private String time; 
 
     public CalculatorResponse(int x, int y, int result) {
