@@ -32,4 +32,13 @@ public class CalculatorServiceTest {
     public void testDiv() {
         assertEquals(1, new CalculatorService().div(12, 12).getResult());
     }
+    
+    @Test
+    public void testGet() {
+    	CalculatorResponse calculatorResponse = new CalculatorResponse(1, 1, 1);
+    	assertEquals(1, calculatorResponse.getX());
+    	assertEquals(1, calculatorResponse.getY());
+    	assertEquals(1, calculatorResponse.getResult());
+    }
+    
 }
