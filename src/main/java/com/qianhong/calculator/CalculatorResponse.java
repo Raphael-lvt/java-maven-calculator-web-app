@@ -8,6 +8,7 @@ public class CalculatorResponse {
 	 * Attributs nécessaires au calcul
 	 */
     private int x; // premier nombre
+    // dddd
     private int y; // deuxieme nombre
     private int result; //resultat après opération
     private String time; // date actuel
