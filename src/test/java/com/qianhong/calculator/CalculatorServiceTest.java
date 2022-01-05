@@ -15,7 +15,7 @@ public class CalculatorServiceTest {
 
     @Test
     public void testAdd() {
-        assertEquals(34, new CalculatorService().Add(8, 26).getResult());
+        assertEquals(34, new CalculatorService().add(8, 26).getResult());
     }
 
     @Test
@@ -25,11 +25,11 @@ public class CalculatorServiceTest {
 
     @Test
     public void testMul() {
-        assertEquals(88, new CalculatorService().Mul(11, 8).getResult());
+        assertEquals(88, new CalculatorService().mul(11, 8).getResult());
     }
 
     @Test
     public void testDiv() {
-        assertEquals(1, new CalculatorService().Div(12, 12).getResult());
+        assertEquals(1, new CalculatorService().div(12, 12).getResult());
     }
 }

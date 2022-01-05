@@ -4,31 +4,31 @@ import java.util.Date;
 
 public class CalculatorResponse {
 
-    int _x;
-    int _y;
-    int _result;
-    String _time;
+    int x;
+    int y;
+    int result;
+    String time;
 
     public CalculatorResponse(int x, int y, int result) {
-        _x = x;
-        _y = y;
-        _result = result;
-        _time = new Date().toString();
+        x = x;
+        y = y;
+        result = result;
+        time = new Date().toString();
     }
 
     public int getX() {
-        return _x;
+        return x;
     }
 
     public int getY() {
-        return _y;
+        return y;
     }
 
     public int getResult() {
-        return _result;
+        return result;
     }
 
     public String getTime() {
-        return _time;
+        return time;
     }
 }
