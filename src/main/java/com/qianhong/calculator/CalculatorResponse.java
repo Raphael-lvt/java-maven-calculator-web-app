@@ -23,6 +23,9 @@ public class CalculatorResponse {
 
 /**.
  * Constructeur de la classe
+ * @param xToInject
+ * @param yToInject
+ * @param resultToInject
  */
     public CalculatorResponse(final int xToInject, final int yToInject, final int resultToInject) {
         this.x = xToInject;
@@ -31,18 +34,30 @@ public class CalculatorResponse {
         time = new Date().toString();
     }
 
+/**.
+* Getteur de x
+*/
     public int getX() {
         return x;
     }
 
+/**.
+ * Getteur de y
+ */
     public int getY() {
         return y;
     }
 
+/**.
+ * Getteur de result
+ */
     public int getResult() {
         return result;
     }
 
+/**.
+ * Getteur de time
+ */
     public String getTime() {
         return time;
     }
