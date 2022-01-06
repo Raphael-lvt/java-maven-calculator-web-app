@@ -115,7 +115,7 @@
 				<!-- on exclue les tests -->
 				<configuration>
 					<excludes>
-						<exclude>com/qianhong/calculator/*Test*.*</exclude>
+						<exclude>com/qianhong/calculator/*Test.*</exclude>
 					</excludes>
 				</configuration>
 			</plugin>
