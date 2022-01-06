@@ -1,6 +1,6 @@
 /*
  *  03.05.2016
- *  Copyright (c) 2016 FOO-COMPANY. All Rights Reserved.  
+ *  Copyright (c) 2016 FOO-COMPANY. All Rights Reserved.
  */
 
 package com.qianhong.calculator;
@@ -15,6 +15,10 @@ import java.util.Date;
 @Path("/calculator")
 public class CalculatorService {
 
+/**.
+ * Ping
+ * @return message de bienvenue
+ */
     @GET
     @Path("ping")
     @Produces(MediaType.TEXT_PLAIN)
@@ -22,31 +26,55 @@ public class CalculatorService {
         return "Welcome to Java Maven Calculator Web App!!!\n" + new Date().toString();
     }
 
+/**.
+ * Operation adition
+ * @param x
+ * @param y
+ * @return CalculatorResponse
+ */
     @GET
     @Path("add")
     @Produces(MediaType.APPLICATION_JSON)
-    public CalculatorResponse add(@QueryParam("x") int x, @QueryParam("y") int y) {
+    public CalculatorResponse add(@QueryParam("x") final int x, @QueryParam("y") final int y) {
         return new CalculatorResponse(x, y, x + y);
     }
-
+    
+/**.
+ * Operation soustraction
+ * @param x
+ * @param y
+ * @return CalculatorResponse
+ */
     @GET
     @Path("sub")
     @Produces(MediaType.APPLICATION_JSON)
-    public CalculatorResponse sub(@QueryParam("x") int x, @QueryParam("y") int y) {
+    public CalculatorResponse sub(@QueryParam("x") final int x, @QueryParam("y") final int y) {
         return new CalculatorResponse(x, y, x - y);
     }
 
+/**.
+ * Operation multiplication
+ * @param x
+ * @param y
+ * @return CalculatorResponse
+ */
     @GET
     @Path("mul")
     @Produces(MediaType.APPLICATION_JSON)
-    public CalculatorResponse mul(@QueryParam("x") int x, @QueryParam("y") int y) {
+    public CalculatorResponse mul(@QueryParam("x") final int x, @QueryParam("y") final int y) {
         return new CalculatorResponse(x, y, x * y);
     }
 
+/**.
+ * Operation division
+ * @param x
+ * @param y
+ * @return CalculatorResponse
+ */
     @GET
     @Path("div")
     @Produces(MediaType.APPLICATION_JSON)
-    public CalculatorResponse div(@QueryParam("x") int x, @QueryParam("y") int y) {
+    public CalculatorResponse div(@QueryParam("x") final int x, @QueryParam("y") final int y) {
         return new CalculatorResponse(x, y, x / y);
     }
 }

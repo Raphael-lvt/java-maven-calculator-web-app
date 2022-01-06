@@ -52,7 +52,7 @@ public class CalculatorResponse {
 
 /**.
  * Getteur de result
- * @ return result
+ * @return result
  */
     public int getResult() {
         return result;
