@@ -4,9 +4,9 @@ import java.util.Date;
 
 public class CalculatorResponse {
 
-	/*
-	 * Description de l'attribut privé
-	 */
+/**
+ * Description de l'attribut privé
+ */
     private int x; 
     private int y;
     private int result;
