@@ -50,7 +50,7 @@ public class CalculatorServiceIT {
             assertEquals(200, response.getStatusLine().getStatusCode());
             assertThat(EntityUtils.toString(response.getEntity()), containsString("\"result\":4"));       	
         }catch (IOException e) {
-			e.printStackTrace();
+        	logger.info(e);
 		} 
     }
 
@@ -63,7 +63,7 @@ public class CalculatorServiceIT {
             assertEquals(200, response.getStatusLine().getStatusCode());
             assertThat(EntityUtils.toString(response.getEntity()), containsString("\"result\":88"));        	
         }catch (IOException e) {
-			e.printStackTrace();
+        	logger.info(e);
 		}
     }
 
@@ -76,7 +76,7 @@ public class CalculatorServiceIT {
             assertEquals(200, response.getStatusLine().getStatusCode());
             assertThat(EntityUtils.toString(response.getEntity()), containsString("\"result\":1"));
         }catch (IOException e) {
-			e.printStackTrace();
+        	logger.info(e);
 		}
     }
 }
