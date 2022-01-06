@@ -5,12 +5,21 @@ import java.util.Date;
 public class CalculatorResponse {
 
 /**.
- * Description de l'attribut privé
+ * Premier nombre du calcul
  */
-    private int x; 
+    private int x;
+/**.
+ * Deuxième nombre du calcul
+ */
     private int y;
+/**.
+ * Resultat du calcul
+ */
     private int result;
-    private String time; 
+/**.
+ * Description de l'heure
+ */
+    private String time;
 
     public CalculatorResponse(int x, int y, int result) {
         this.x = x;
