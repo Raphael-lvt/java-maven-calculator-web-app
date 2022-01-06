@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 
 import static org.hamcrest.CoreMatchers.*;
 
-public class CalculatorServiceIT {
+public class CalculatorServiceITest {
 
     @Test
     public void testPing() throws Exception {
