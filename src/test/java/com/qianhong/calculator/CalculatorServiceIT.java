@@ -1,7 +1,6 @@
 package com.qianhong.calculator;
 
 import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -11,7 +10,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 import java.io.IOException;
-
 import static org.hamcrest.CoreMatchers.*;
 
 public class CalculatorServiceIT {
@@ -25,46 +23,60 @@ public class CalculatorServiceIT {
 			response = httpclient.execute(httpGet);
 	        assertEquals(200, response.getStatusLine().getStatusCode());
 	        assertThat(EntityUtils.toString(response.getEntity()), containsString("Welcome to Java Maven Calculator Web App!!!"));
-		} catch (ClientProtocolException e) {
-			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
     }
 
     @Test
-    public void testAdd() throws Exception {
+    public void testAdd(){
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet("http://localhost:9999/calculator/api/calculator/add?x=8&y=26");
-        HttpResponse response = httpclient.execute(httpGet);
-        assertEquals(200, response.getStatusLine().getStatusCode());
-        assertThat(EntityUtils.toString(response.getEntity()), containsString("\"result\":34"));
+        try {
+        	HttpResponse response = httpclient.execute(httpGet);
+            assertEquals(200, response.getStatusLine().getStatusCode());
+            assertThat(EntityUtils.toString(response.getEntity()), containsString("\"result\":34"));
+        }catch (IOException e) {
+			e.printStackTrace();
+		} 
     }
 
     @Test
     public void testSub() throws Exception {
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet("http://localhost:9999/calculator/api/calculator/sub?x=12&y=8");
-        HttpResponse response = httpclient.execute(httpGet);
-        assertEquals(200, response.getStatusLine().getStatusCode());
-        assertThat(EntityUtils.toString(response.getEntity()), containsString("\"result\":4"));
+        try {
+            HttpResponse response = httpclient.execute(httpGet);
+            assertEquals(200, response.getStatusLine().getStatusCode());
+            assertThat(EntityUtils.toString(response.getEntity()), containsString("\"result\":4"));       	
+        }catch (IOException e) {
+			e.printStackTrace();
+		} 
     }
 
     @Test
     public void testMul() throws Exception {
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet("http://localhost:9999/calculator/api/calculator/mul?x=11&y=8");
-        HttpResponse response = httpclient.execute(httpGet);
-        assertEquals(200, response.getStatusLine().getStatusCode());
-        assertThat(EntityUtils.toString(response.getEntity()), containsString("\"result\":88"));
+        try {
+            HttpResponse response = httpclient.execute(httpGet);
+            assertEquals(200, response.getStatusLine().getStatusCode());
+            assertThat(EntityUtils.toString(response.getEntity()), containsString("\"result\":88"));        	
+        }catch (IOException e) {
+			e.printStackTrace();
+		}
     }
 
     @Test
     public void testDiv() throws Exception {
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet("http://localhost:9999/calculator/api/calculator/div?x=12&y=12");
-        HttpResponse response = httpclient.execute(httpGet);
-        assertEquals(200, response.getStatusLine().getStatusCode());
-        assertThat(EntityUtils.toString(response.getEntity()), containsString("\"result\":1"));
+        try {
+            HttpResponse response = httpclient.execute(httpGet);
+            assertEquals(200, response.getStatusLine().getStatusCode());
+            assertThat(EntityUtils.toString(response.getEntity()), containsString("\"result\":1"));
+        }catch (IOException e) {
+			e.printStackTrace();
+		}
     }
 }
