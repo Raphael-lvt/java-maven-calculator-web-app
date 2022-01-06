@@ -5,14 +5,14 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.apache.log4j.Logger;
 import org.junit.Test;
-
 import static org.junit.Assert.*;
-
 import java.io.IOException;
 import static org.hamcrest.CoreMatchers.*;
 
 public class CalculatorServiceIT {
+	Logger logger = Logger.getLogger(CalculatorServiceIT.class);
 
     @Test
     public void testPing(){
@@ -24,7 +24,7 @@ public class CalculatorServiceIT {
 	        assertEquals(200, response.getStatusLine().getStatusCode());
 	        assertThat(EntityUtils.toString(response.getEntity()), containsString("Welcome to Java Maven Calculator Web App!!!"));
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.info(e);
 		}
     }
 
@@ -42,7 +42,7 @@ public class CalculatorServiceIT {
     }
 
     @Test
-    public void testSub() throws Exception {
+    public void testSub(){
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet("http://localhost:9999/calculator/api/calculator/sub?x=12&y=8");
         try {
@@ -55,7 +55,7 @@ public class CalculatorServiceIT {
     }
 
     @Test
-    public void testMul() throws Exception {
+    public void testMul(){
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet("http://localhost:9999/calculator/api/calculator/mul?x=11&y=8");
         try {
@@ -68,7 +68,7 @@ public class CalculatorServiceIT {
     }
 
     @Test
-    public void testDiv() throws Exception {
+    public void testDiv(){
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet("http://localhost:9999/calculator/api/calculator/div?x=12&y=12");
         try {
