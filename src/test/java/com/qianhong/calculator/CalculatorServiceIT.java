@@ -1,7 +1,6 @@
 package com.qianhong.calculator;
 
 import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -12,7 +11,7 @@ import static org.junit.Assert.*;
 
 import static org.hamcrest.CoreMatchers.*;
 
-public class CalculatorServiceITest {
+public class CalculatorServiceIT {
 
     @Test
     public void testPing() throws Exception {
