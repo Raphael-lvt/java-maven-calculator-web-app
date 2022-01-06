@@ -1,6 +1,7 @@
 package com.qianhong.calculator;
 
 import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -9,17 +10,26 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+import java.io.IOException;
+
 import static org.hamcrest.CoreMatchers.*;
 
 public class CalculatorServiceIT {
 
     @Test
-    public void testPing() throws Exception {
+    public void testPing(){
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet("http://localhost:9999/calculator/api/calculator/ping");
-        HttpResponse response = httpclient.execute(httpGet);
-        assertEquals(200, response.getStatusLine().getStatusCode());
-        assertThat(EntityUtils.toString(response.getEntity()), containsString("Welcome to Java Maven Calculator Web App!!!"));
+        HttpResponse response;
+		try {
+			response = httpclient.execute(httpGet);
+	        assertEquals(200, response.getStatusLine().getStatusCode());
+	        assertThat(EntityUtils.toString(response.getEntity()), containsString("Welcome to Java Maven Calculator Web App!!!"));
+		} catch (ClientProtocolException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
     }
 
     @Test

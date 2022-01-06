@@ -38,7 +38,7 @@ public class CalculatorService {
     public CalculatorResponse add(@QueryParam("x") final int x, @QueryParam("y") final int y) {
         return new CalculatorResponse(x, y, x + y);
     }
-    
+
 /**.
  * Operation soustraction
  * @param x
