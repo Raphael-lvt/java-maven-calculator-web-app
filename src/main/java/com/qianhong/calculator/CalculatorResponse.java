@@ -21,10 +21,13 @@ public class CalculatorResponse {
  */
     private String time;
 
-    public CalculatorResponse(int x, int y, int result) {
-        this.x = x;
-        this.y = y;
-        this.result = result;
+/**.
+ * Constructeur de la classe
+ */
+    public CalculatorResponse(final int xToInject, final int yToInject, final int resultToInject) {
+        this.x = xToInject;
+        this.y = yToInject;
+        this.result = resultToInject;
         time = new Date().toString();
     }
 
