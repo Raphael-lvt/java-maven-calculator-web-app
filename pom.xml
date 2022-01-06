@@ -92,6 +92,7 @@
     </pluginManagement>
 
         <plugins>
+        <!-- pour mesurer la couverture des tests -->
         <plugin>
 			<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
@@ -111,6 +112,12 @@
 						</goals>
 					</execution>
 				</executions>
+				<!-- on exclue les tests -->
+				<configuration>
+					<excludes>
+						<exclude>com/qianhong/calculator/CalculatorServiceIT.class</exclude>
+					</excludes>
+				</configuration>
 			</plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
