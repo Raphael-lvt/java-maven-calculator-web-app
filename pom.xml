@@ -116,6 +116,7 @@
 				<configuration>
 					<excludes>
 						<exclude>com/qianhong/calculator/*Test.*</exclude>
+						<exclude>com/qianhong/calculator/CalculatorServiceIT.java</exclude>
 					</excludes>
 				</configuration>
 			</plugin>
