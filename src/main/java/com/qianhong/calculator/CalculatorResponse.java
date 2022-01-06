@@ -36,6 +36,7 @@ public class CalculatorResponse {
 
 /**.
 * Getteur de x
+* @return x
 */
     public int getX() {
         return x;
@@ -43,6 +44,7 @@ public class CalculatorResponse {
 
 /**.
  * Getteur de y
+ * @return y
  */
     public int getY() {
         return y;
@@ -50,6 +52,7 @@ public class CalculatorResponse {
 
 /**.
  * Getteur de result
+ * @ return result
  */
     public int getResult() {
         return result;
@@ -57,6 +60,7 @@ public class CalculatorResponse {
 
 /**.
  * Getteur de time
+ * @return time
  */
     public String getTime() {
         return time;
